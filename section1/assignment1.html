@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 1</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200italic,300,300italic,regular,italic,600,600italic,700,700italic,800,800italic,900,900italic"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      * {
+        font-family: Nunito;
+      }
+
+      .screen {
+        background: linear-gradient(to right bottom, #80e4e427, #131b0f2c),
+          url(https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)
+            no-repeat;
+
+        background-size: cover;
+        height: 90vh;
+      }
+
+      .my-card {
+        border-radius: 7px;
+        margin: 200px auto;
+        width: 30%;
+        height: 85%;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.986);
+        text-align: center;
+        box-shadow: 3px 1px 5px 2px rgba(0, 0, 0, 0.733);
+        opacity: 0.7;
+      }
+
+      .logo {
+        width: 70px;
+        margin-top: 50px;
+        margin-bottom: 0px;
+      }
+
+      .click {
+        color: white;
+        margin: 15px;
+        font-weight: normal;
+        font-size: auto;
+        text-decoration: none;
+      }
+
+      .details {
+        margin-top: 30px;
+      }
+
+      .textarea {
+        margin: 8px;
+        padding-left: 20px;
+        border: none;
+        border-radius: 10px;
+        width: 70%;
+        height: 40px;
+        outline: none;
+        box-shadow: 3px 1px 5px 2px rgba(112, 110, 110, 0.425);
+        display: inline;
+        align-items: center;
+      }
+
+      .textarea:focus {
+        box-shadow: 3px 1px 5px 2px rgba(243, 236, 236, 0.637);
+      }
+
+      .my-btn {
+        margin-top: 40px;
+        padding: 15px 5px;
+        background-color: #2688f8;
+        color: white;
+        font-size: 1.1em;
+        transition-duration: 300ms;
+        width: 75%;
+        border-radius: 30px;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.19),
+          0 3px 6px rgba(0, 0, 0, 0.23);
+        outline: none;
+      }
+
+      .my-btn:hover {
+        transform: translateY(-10px);
+        background-color: #0ad647;
+        box-shadow: 3px 1px 5px 2px rgba(216, 205, 205, 0.425);
+      }
+
+      #check {
+        margin-top: 0px;
+        text-align: left;
+        display: flex;
+        padding: 0px 63px;
+      }
+
+      .pass {
+        margin: 20px;
+        color: rgb(215, 232, 238);
+        text-decoration: none;
+        display: block;
+      }
+
+      .pass:hover {
+        color: rgb(210, 250, 135);
+      }
+
+      .flex-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .input-icons i {
+        position: absolute;
+      }
+
+      .input-icons {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .icon {
+        padding: 20px;
+        color: #ff4500;
+        min-width: 50px;
+        text-align: center;
+      }
+
+      .input-field {
+        text-align: center;
+      }
+      .links{
+        color: lightskyblue
+      }
+    </style>
+  </head>
+
+  <body class="screen">
+    <div class="my-card">
+      <div>
+        <img
+          class="logo"
+          src="https://image.flaticon.com/icons/png/128/3237/3237472.png"
+          alt=""
+        />
+      </div>
+
+      <div class="details">
+        <form
+          name="myForm"
+          action="javascript:void(0)"
+          onsubmit="return alert('OKAY')"
+          method="post"
+        >
+          <p style="display: inline; font-size: 20px">
+            <b>Register for an Account</b>
+          </p>
+          <div class="input-icons">
+            <i class="fa fa-user icon"> </i>
+            <input
+              type="text"
+              class="textarea input-field"
+              name="username"
+              placeholder="Username"
+              required
+            />
+            <br />
+          </div>
+
+          <div class="input-icons">
+            <i class="fa fa-envelope icon"> </i>
+            <input
+              type="email"
+              class="textarea input-field"
+              name="email"
+              placeholder="User E-mail"
+              required
+            /><br />
+          </div>
+
+          <div class="input-icons">
+            <i class="fa fa-key icon"> </i>
+            <input
+              type="password"
+              class="textarea input-field"
+              name="password"
+              placeholder="Password"
+              required
+            /><br />
+          </div>
+
+          <div class="input-icons">
+            <i class="fa fa-key icon"> </i>
+            <input
+              type="password"
+              class="textarea input-field"
+              name="repassword"
+              placeholder="Re-type Password"
+              required
+            /><br />
+          </div>
+
+          <div id="check">
+            <input type="checkbox" />
+            <span>
+              I read and fully agree to the
+              <a href="#"  class="links"> Terms of Use</a> and
+              <a href="#" class="links"> Privacy Policy</a></span
+            >
+          </div>
+
+          <input
+          class="my-btn"
+            type="submit"
+            name="submit"
+          />
+        </form>
+      </div>
+
+      <a class="pass" href="loginpage.html">Return to the Login page -></a>
+    </div>
+  </body>
+</html>

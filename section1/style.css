@@ -15,7 +15,10 @@ h3{
 
 }
 #unique-id{
-    background-color: teal;
+    background-color: rgb(149, 231, 231);
     border: 3px solid black;
     border-radius: 30px;
+    height:300px;
+    width:50%;
+    text-shadow: 0 0 3px #19545c;
 }
