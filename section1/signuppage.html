@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+
+    <style>
+        .my-card {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+                0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+
+        .logo {
+            width: 100px;
+            display: block;
+            margin: auto;
+        }
+
+        @media screen and (max-width: 1080px) {
+            .logo {
+                width: 80px;
+            }
+        }
+
+        body {
+            background: linear-gradient(to right bottom, #000000de, #272626d0),
+                url(https://www.androidguys.com/wp-content/uploads/2016/01/black-white-background-2.jpg);
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="col-md-8 mx-auto" style="margin: 10rem">
+        <div class="container">
+            <div class="card my-card">
+                <div class="row">
+                    <div class="col-md-7">
+                        <img class="img-fluid mt-5"
+                            src="https://raw.githubusercontent.com/digipodium/DP-2021-AUG-REACT-500/master/Section%201/reg_img.png?token=AQO3HM27FHQVANCKFSFNSGTBHWXVQ"
+                            alt="" />
+                    </div>
+                    <div class="col-md-5" style="
+                background: linear-gradient(
+                  to right bottom,
+                  #3d3d3d41,
+                  #42424244
+                );
+              ">
+                        <div class="card-body" style="padding: 5rem">
+                            <img class="logo" src="https://avatars.githubusercontent.com/u/26999847?s=280&v=4" alt="" />
+
+                            <form>
+                                <div class="form-floating mt-3">
+                                    <input id="username" type="text" class="form-control" placeholder="username" />
+                                    <label for="username">Username</label>
+                                </div>
+
+                                <div class="form-floating mt-3">
+                                    <input id="email" type="email" class="form-control" placeholder="email" />
+                                    <label for="email">Email</label>
+                                </div>
+                                <div class="form-floating mt-3">
+                                    <input id="password" type="password" class="form-control" placeholder="password" />
+                                    <label for="password">Password</label>
+                                </div>
+
+                                <div class="form-floating mt-3">
+                                    <input id="cpassword" type="password" class="form-control" placeholder="password" />
+                                    <label for="cpassword">Confirm Password</label>
+                                </div>
+
+                                <div class="mt-4">
+                                    <button class="btn btn-outline-primary"
+                                        style="border-radius: 20px; padding: 5px 20px">
+                                        Sign Up
+                                    </button>
+
+                                    <span>OR</span>
+                                    <span>Login In</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
