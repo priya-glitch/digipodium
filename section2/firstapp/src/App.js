@@ -2,20 +2,26 @@
 import './App.css';
 import Login from './components/login';
 import Signup from './components/signup';
-import Register from './components/register';
+// import Register from './components/register';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Header from './components/header';
+import ProductDetails from './components/productdetails';
 
 function App() {
   return (
     <div>
-      <h1>My first react app </h1>
-      <Login>
-      </Login>
+      
+      <BrowserRouter>
+      <Header></Header>
+    
+          <Route path="/login" component={Login}/>
+          <Route path="/signup" component={Signup}/>
+          <Route path="/productdetails" component={ProductDetails}/>
 
-      <Signup>
+         
+      </BrowserRouter>
 
-      </Signup>
-      <Register></Register>
-      </div>
+    </div>
     
   );
 }
