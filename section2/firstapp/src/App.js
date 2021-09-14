@@ -6,6 +6,7 @@ import Signup from './components/signup';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Header from './components/header';
 import ProductDetails from './components/productdetails';
+import ProductList from './components/productlist';
 
 function App() {
   return (
@@ -16,7 +17,10 @@ function App() {
     
           <Route path="/login" component={Login}/>
           <Route path="/signup" component={Signup}/>
+          <Route path="/productlist" component={ProductList}/>
           <Route path="/productdetails" component={ProductDetails}/>
+          <Route path="/productdetails/:id" component={ProductDetails}/>
+         
 
          
       </BrowserRouter>
