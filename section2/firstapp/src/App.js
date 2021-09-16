@@ -18,7 +18,7 @@ function App() {
           <Route path="/login" component={Login}/>
           <Route path="/signup" component={Signup}/>
           <Route path="/productlist" component={ProductList}/>
-          <Route path="/productdetails" component={ProductDetails}/>
+          
           <Route path="/productdetails/:id" component={ProductDetails}/>
          
 

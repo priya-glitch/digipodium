@@ -17,6 +17,9 @@ const Header = () =>{
           <li className="nav-item">
             <NavLink className="nav-link" to="/productdetails" activeClassName="active">Product Details </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/productlist" activeClassName="active">Product List </NavLink>
+          </li>
         </ul>
         <form>
           <input className="form-control" type="text" placeholder="Search" aria-label="Search"/>
