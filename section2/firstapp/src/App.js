@@ -7,7 +7,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Header from './components/header';
 import ProductDetails from './components/productdetails';
 import ProductList from './components/productlist';
-
+import EventHandling from './components/eventHandling';
+import Gallery from './components/gallery';
 function App() {
   return (
     <div>
@@ -18,9 +19,9 @@ function App() {
           <Route path="/login" component={Login}/>
           <Route path="/signup" component={Signup}/>
           <Route path="/productlist" component={ProductList}/>
-          
           <Route path="/productdetails/:id" component={ProductDetails}/>
-         
+          <Route path="/events" component={EventHandling} />
+          <Route path="/gallery" component={Gallery} />
 
          
       </BrowserRouter>

@@ -1,13 +1,13 @@
 import ProductData from "./productdata";
-import { Link } from "react-router-dom";
-
+ import { Link } from "react-router-dom";
+ import './productlist.css';
 const Product = (props) => {
-  const data = props.productDataKey;
-  const index = props.indexKey;
+   const data = props.productDataKey;
+ const index = props.indexKey;
 
   return (
     <>
-      <div className="container bcontent">
+       <div className="container bcontent">
         <hr />
         <div className="card">
           <div className="row no-gutters">
@@ -48,7 +48,8 @@ const Product = (props) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> 
+
     </>
   );
 };

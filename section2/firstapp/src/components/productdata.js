@@ -1,6 +1,6 @@
 const ProductData = [
     {
-        id: 1,
+        
         name: 'Asus Vivobook 15',
         price: 40990,
         num_ratings: 2726,
@@ -11,7 +11,7 @@ const ProductData = [
         offer: ['1', '2']
     },
     {
-        id: 2,
+        
         name: 'Asus Vivobook 14',
         price: 40991,
         num_ratings: 2727,
@@ -22,7 +22,7 @@ const ProductData = [
         offer: ['1', '2']
     },
     {
-        id: 3,
+        
         name: 'Asus Vivobook 13',
         price: 40992,
         num_ratings: 2728,
@@ -33,7 +33,7 @@ const ProductData = [
         offer: ['1', '2']
     },
     {
-        id: 4,
+        
         name: 'Asus Vivobook 12',
         price: 40993,
         num_ratings: 2729,
