@@ -9,6 +9,8 @@ import ProductDetails from './components/productdetails';
 import ProductList from './components/productlist';
 import EventHandling from './components/eventHandling';
 import Gallery from './components/gallery';
+import Forms from './components/forms';
+
 function App() {
   return (
     <div>
@@ -22,6 +24,7 @@ function App() {
           <Route path="/productdetails/:id" component={ProductDetails}/>
           <Route path="/events" component={EventHandling} />
           <Route path="/gallery" component={Gallery} />
+          <Route path="/forms" component={Forms} />
 
          
       </BrowserRouter>

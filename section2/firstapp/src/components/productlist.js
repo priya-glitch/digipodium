@@ -13,7 +13,7 @@ const Product = (props) => {
           <div className="row no-gutters">
             <div className="col-sm-3">
               <div className="container">
-                {" "}
+                
                 <img
                   className="card-img-top "
                   src={data.img}
@@ -27,7 +27,7 @@ const Product = (props) => {
                   <Link to={"/productdetails/" + index}>{data.name}</Link>
                 </h2>
 
-                <h5>
+                <h6>
                   Processor: 10th Gen Intel Core i7-10875H, 2.3 GHz Base Speed,
                   Up to 5.1 GHz Max Turbo Speed, 8 cores, 16 Threads, 16MB Cache
                   Memory: 16GB DDR4 3200MHz, Upgradeable Up to 32GB using 2x
@@ -35,13 +35,12 @@ const Product = (props) => {
                   additional 2x M.2 2280 PCIe 3.0 Slot for SSD Storage Expansion
                   Graphics: Dedicated NVIDIA GeForce RTX 2070 SUPER GDDR6 8GB
                   VRAM
-                </h5>
-                <h2>{data.price}</h2>
-                <h4>reviews: {data.reviews}</h4>
+                </h6>
+                <h2> ₹ : {data.price}</h2>
+                <h4>Reviews : {data.reviews}</h4>
 
                 <p className="card-text">
-                  Suresh Dasari is a founder and technical lead developer in
-                  tutlane.
+                Ratings : {data.ratings}
                 </p>
                 <Link className="btn btn-primary">View Profile</Link>
               </div>

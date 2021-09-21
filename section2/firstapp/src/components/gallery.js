@@ -31,11 +31,12 @@ const Gallery = () => {
       <img className="img-fluid" src={mainIMg} alt="" />
 
       <div className="row mt-3">
-        {Image.map((item, index) => {
+        {
+        Image.map((item, index) => {
           return (
             <div className="col-md" key={index}>
               <img
-                onClick={(e) => {
+                onDoubleClick={(e) => {
                   changeImage(item.src);
                 }}
                 className="img-fluid"
