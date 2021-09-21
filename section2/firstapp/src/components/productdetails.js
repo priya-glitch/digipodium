@@ -12,14 +12,14 @@ const ProductDetails = () =>{
         <h1>index : {id}</h1>
         <h1>{currentProduct.name}</h1>
         <h1>{currentProduct.price}</h1>
-       
-       
-
+        <h1>{currentProduct.num_ratings}</h1>
+        <h1>{currentProduct.ratings}</h1>
+        <h1>{currentProduct.reviews}</h1>
 
        
     </>
     )
-    
+            
 }
 
 export  default ProductDetails;

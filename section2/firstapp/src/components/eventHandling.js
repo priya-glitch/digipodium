@@ -6,10 +6,11 @@ const EventHandling = () => {
     const [count, setCount] = useState(0);
 
     const handleClick = () => {
-        // c++;
-        // console.log(c);
+        c++;
+        console.log(c);
 
         setCount(count + 1);
+        console.log(count);
     }
 
     return (
