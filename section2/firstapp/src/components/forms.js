@@ -1,5 +1,8 @@
 import { Formik } from "formik";
 import Swal from "sweetalert2";
+import "./forms.css";
+
+
 
 const Forms = () => {
   const signupForm = {
@@ -11,15 +14,25 @@ const Forms = () => {
   const signupSubmit = (values) => {
     console.log(values);
     Swal.fire({
-        icon: "error",
-        title : "WEll done",
-        text : "Successfully Registered"
-    })
+      title: "Are you sure?",
+      text: "You won't be able to change it!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Submit it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Submitted!", "Your data has been Submitted.", "success");
+      }
+    });
   };
+
+  
 
   return (
     <>
-      <div className="container" style={{ margin: "30px" }}>
+      {/* <div className="container" style={{ margin: "30px" }}>
         <h1>Sign Up Here</h1>
         <hr />
         <Formik initialValues={signupForm} onSubmit={signupSubmit}>
@@ -75,7 +88,54 @@ const Forms = () => {
             </form>
           )}
         </Formik>
-      </div>
+      </div> */}
+      <Formik initialValues={signupForm} onSubmit={signupSubmit}>
+        {({ values, handleSubmit, handleChange }) => (
+          <form onSubmit={handleSubmit}>
+            <div className="form-group"></div>
+            <div className="container2">
+              <div className="container1 ">
+                <div className="brand-logo ">
+        <img src="https://image.flaticon.com/icons/png/128/3237/3237472.png" className="img-fluid " alt=""/>
+                </div>
+                <div className="brand-title">Sign Up Here</div>
+                <div className="inputs">
+                  <label className="label1">Name</label>
+                  <input
+                  id="name"
+                    className="input1"
+                    type="text"
+                    placeholder="Enter Full Name"
+                    value={values.name}
+                  onChange={handleChange}
+                  />
+                  <label className="label1">E-mail</label>
+                  <input
+                  id="email"
+                    className="input1"
+                    type="email"
+                    placeholder="example@test.com"
+                    value={values.email}
+                  onChange={handleChange}
+                  />
+                  <label className="label1">Password</label>
+                  <input
+                  id="password"
+                    className="input1"
+                    type="password"
+                    placeholder="Min 6 charaters long"
+                    value={values.password}
+                  onChange={handleChange}
+                  />
+                  <button className="button1" type="submit">
+                    LOGIN
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        )}
+      </Formik>
     </>
   );
 };

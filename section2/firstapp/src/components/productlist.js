@@ -1,12 +1,15 @@
 import ProductData from "./productdata";
  import { Link } from "react-router-dom";
+ import { useState } from "react";
  import './productlist.css';
 const Product = (props) => {
+  
    const data = props.productDataKey;
  const index = props.indexKey;
 
   return (
     <>
+  
        <div className="container bcontent">
         <hr />
         <div className="card">
@@ -15,7 +18,7 @@ const Product = (props) => {
               <div className="container">
                 
                 <img
-                  className="card-img-top "
+                  className="card-img-top"
                   src={data.img}
                   alt="Suresh Dasari Card"
                 />
@@ -42,7 +45,7 @@ const Product = (props) => {
                 <p className="card-text">
                 Ratings : {data.ratings}
                 </p>
-                <Link className="btn btn-primary">View Profile</Link>
+                <Link className="btn btn-primary" to="">View Profile</Link>
               </div>
             </div>
           </div>
@@ -55,15 +58,49 @@ const Product = (props) => {
 
 const ProductList = () => {
 
+  const initUser = () =>{
+    let user = sessionStorage.getItem('user');
+
+    if(user){
+      return JSON.parse(user);
+    }else{
+      return{}
+    }
+  }
+
+
+  // const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')))
+  const [currentUser, setCurrentUser] = useState(initUser())
+
+  const displayUserDetails = () =>{
+    if(currentUser.username){
+      return(
+        <>
+        <h2>
+          Hello,  {currentUser.username} !!!<br/>
+          Your Password is '{currentUser.password}'
+        </h2>
+        </>
+      )
+    }
+   else {
+    return <p>Not Loggedin? <Link to="/login">Login Now</Link></p>
+}
+    
+  }
+
+
   return (
     <>
+     {displayUserDetails()}
+      
       <h1>Product List</h1>
       <hr />
       {ProductData.map((product, index) => {
         return (
-          <>
+          <div key={index}>
             <Product productDataKey={product} indexKey={index} ></Product>
-          </>
+          </div>
         );
       })}
     </>
