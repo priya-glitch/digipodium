@@ -26,7 +26,6 @@ function App() {
           <Route path="/gallery" component={Gallery} />
           <Route path="/forms" component={Forms} />
 
-         
       </BrowserRouter>
 
     </div>
