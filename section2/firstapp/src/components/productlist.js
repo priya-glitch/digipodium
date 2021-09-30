@@ -70,7 +70,7 @@ const ProductList = () => {
 
 
   // const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')))
-  const [currentUser, setCurrentUser] = useState(initUser())
+  const [currentUser] = useState(initUser())
 
   const displayUserDetails = () =>{
     if(currentUser.username){

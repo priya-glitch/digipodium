@@ -3,6 +3,8 @@ const port = 5000 ;
 const app = express();
 const userRouter = require('./routers/userRouter');
 
+app.use(express.json());
+
 app.use('/user', userRouter);
 
 app.get("/", (req, res) =>{
