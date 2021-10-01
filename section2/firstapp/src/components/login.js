@@ -15,11 +15,14 @@ const Login = () => {
 
   const signupSubmit = (values) => {
     console.log(values);
+     
+    
 
   
     sessionStorage.setItem('user', JSON.stringify(values));
     window.location.replace('/productlist');
 
+    
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to change it!",

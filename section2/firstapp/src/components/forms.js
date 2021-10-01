@@ -1,10 +1,14 @@
 import { Formik } from "formik";
 import Swal from "sweetalert2";
+import app_config from "../config";
 import "./forms.css";
 
 
 
 const Forms = () => {
+
+  const url = app_config.api_url;
+
   const signupForm = {
     name: "",
     email: "",
@@ -13,20 +17,48 @@ const Forms = () => {
 
   const signupSubmit = (values) => {
     console.log(values);
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to change it!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, Submit it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire("Submitted!", "Your data has been Submitted.", "success");
-      }
-    });
-  };
+      
+    const reqOptions = {
+      method : 'POST',
+      body : JSON.stringify(values),
+      headers : { 'Content-Type' : 'application/json'}
+    }
+
+
+    fetch(url + '/user/add', reqOptions)
+
+    .then((res) =>
+    {
+      console.log(res.status);
+        const data = res.json();
+        console.log(data);
+
+        if (res.status === 200){ 
+          Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to change it!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, Submit it!",
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire("Submitted!", "Your data has been Submitted.", "success");
+                }
+              });
+        } 
+
+    })
+
+    .then ((data) =>{
+console.log(data);
+    }
+    )
+
+    
+  //   
+   };
 
   
 
@@ -140,4 +172,4 @@ const Forms = () => {
   );
 };
 
-export default Forms;
+export default Forms ;
