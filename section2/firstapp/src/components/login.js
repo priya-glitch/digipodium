@@ -1,15 +1,23 @@
 import { Formik } from "formik";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import app_config from "../config";
 
 const Login = () => {
+
+  const url = app_config.api_url;
+  const [mystate, setMystate] = useState("not intiliazed");
+
+
+
   useEffect(() => {
+    setMystate('Initilized');
     console.log("Use Effect");
-  });
+  }, []);
 
   const signupForm = {
    
-    username: "",
+    email: "",
     password: "",
   };
 
@@ -19,24 +27,50 @@ const Login = () => {
     
 
   
-    sessionStorage.setItem('user', JSON.stringify(values));
-    window.location.replace('/productlist');
+    fetch(url+'/user/getbyemail/'+values.email)
+    // fetch(url + '/user/add', reqOptions)
+    .then((res)=>{
+      console.log(res.status);
+      return res.json();
+    }).then((data) =>{
+      if(data){
 
-    
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to change it!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, Submit it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire("Submitted!", "Your data has been Submitted.", "success");
+         if(data.password == values.password){
+          Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to change it!",
+            icon: "success",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Submit it!",
+          })
+          console.log('login success');
+         
+         return ;
+        }
+        else{
+          console.log('password incorrect')
+        }
+
+
+      }else{
+          console.log('user not found ')
       }
-    });
-  };
+      Swal.fire({
+        title : 'error',
+        text: "something went wrong",
+        icon: "error",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+       
+      })
+    
+
+    })
+    
+  
+  }
 
   return (
     <div>
@@ -51,13 +85,13 @@ const Login = () => {
             {({ values, handleSubmit, handleChange }) => (
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                  <label> Username</label>
+                  <label> Email</label>
                   <input
                     type="text"
                     className="form-control"
-                    id="username"
+                    id="email"
                     placeholder="Enter Username"
-                    value={values.username}
+                    value={values.email}
                     onChange={handleChange}
                   />
                 </div>

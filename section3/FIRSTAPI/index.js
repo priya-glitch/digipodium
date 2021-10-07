@@ -1,7 +1,12 @@
 const express = require("express");
+
+
 const port = 5000 ;
 const app = express();
+
 const userRouter = require('./routers/userRouter');
+const productRouter = require('./routers/productRouter');
+
 const cors = require('cors');
 
 
@@ -11,10 +16,21 @@ app.use(express.json());
 
 app.use('/user', userRouter);
 
+app.use('/product', productRouter);
+
+
+
 app.get("/", (req, res) =>{
     console.log('request from client!!');
     res.send('you got a response');
 })
+
+app.get("/add", (req, res) =>{
+    console.log('request from client at add!!');
+    // res.send('you got a response from home ');
+    res.json("you got a response from add at root");
+})
+
 
 app.get("/home", (req, res) =>{
     console.log('request from client at home!!');

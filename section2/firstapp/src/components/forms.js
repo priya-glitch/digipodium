@@ -30,10 +30,8 @@ const Forms = () => {
     .then((res) =>
     {
       console.log(res.status);
-        const data = res.json();
-        console.log(data);
 
-        if (res.status === 200){ 
+        if (res.status == 200){ 
           Swal.fire({
                 title: "Are you sure?",
                 text: "You won't be able to change it!",
@@ -47,8 +45,15 @@ const Forms = () => {
                   Swal.fire("Submitted!", "Your data has been Submitted.", "success");
                 }
               });
-        } 
 
+        }  else{
+          Swal.fire({
+            icon: 'error',
+            title: 'Error!',
+            text: 'Something went wrong'
+        });
+        }
+ return res.json();
     })
 
     .then ((data) =>{
@@ -58,7 +63,7 @@ console.log(data);
 
     
   //   
-   };
+   }
 
   
 

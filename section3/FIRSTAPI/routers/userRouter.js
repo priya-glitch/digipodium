@@ -29,5 +29,19 @@ res.status(200).json(data);
     })
 })
 
+router.get('/getbyemail/:email', (req,res)=>{
+  console.log('dddddd')
+  Model.findOne({ email : req.params.email })
+  .then( (data)=>{
+    console.log('user data fetched by email');
+    res.status(200).json(data);
+  })
+  .catch( ( ) =>{
+    console.error(err);
+    res.status(500).json(err);
+  })
+}
+)
+
 
 module.exports = router;

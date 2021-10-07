@@ -24,6 +24,9 @@ const Header = () =>{
         <li className="nav-item">
           <NavLink className="nav-link " aria-current="page" to="/gallery" activeClassName="active" >Gallery</NavLink>
         </li>
+        <li className="nav-item">
+          <NavLink className="nav-link " aria-current="page" to="/addproduct" activeClassName="active" >Add Product</NavLink>
+        </li>
         <li className="nav-item dropdown">
           <NavLink className="nav-link dropdown-toggle "   to="#"   id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Browse Product

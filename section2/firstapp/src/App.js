@@ -10,6 +10,7 @@ import ProductList from './components/productlist';
 import EventHandling from './components/eventHandling';
 import Gallery from './components/gallery';
 import Forms from './components/forms';
+import AddProduct from './components/addproduct';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/events" component={EventHandling} />
           <Route path="/gallery" component={Gallery} />
           <Route path="/forms" component={Forms} />
+          <Route path="/addproduct" component={AddProduct} />
 
       </BrowserRouter>
 
